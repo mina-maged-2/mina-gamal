@@ -191,4 +191,108 @@
 
         /* Footer */
         .footer-note {
-            text-
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+            padding-top: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="vcard-container">
+        
+        <div class="company-header">
+            <img src="https://ahramplastic.com/wp-content/uploads/2023/02/logo-7.png" alt="Al-Ahram Group Logo" class="company-logo">
+        </div>
+
+        <div class="profile">
+            <img src="https://ahramplastic.com/wp-content/uploads/2026/02/ahramplastic_img-03-768x576.png" alt="Mina Gamal" class="avatar">
+            <h1 class="name">Mina Gamal</h1>
+            <p class="title">Investor Relations Manager</p>
+        </div>
+
+        <div class="btn-group">
+            <a href="https://ahramplastic.com/" target="_blank" class="btn btn-secondary">
+                <i class="fa-solid fa-globe"></i> Visit Official Website
+            </a>
+
+            <a href="https://drive.google.com/file/d/1ASYseofnJOpNZZTXrtP2qb852B1kdrJq/view?usp=drive_link" target="_blank" class="btn btn-secondary">
+                <i class="fa-solid fa-file-pdf"></i> View Product Catalog
+            </a>
+
+            <a href="https://maps.app.goo.gl/pbsaNYLEP9VZ75um6?g_st=aw" target="_blank" class="btn btn-highlight">
+                <i class="fa-solid fa-map-location-dot"></i> Factory Location
+            </a>
+
+            <button class="btn btn-primary" onclick="downloadVCard()">
+                <i class="fa-solid fa-user-plus"></i> Save Contact
+            </button>
+        </div>
+
+        <div class="action-grid">
+            <a href="https://wa.me/201275377776?text=Hi,%20I'd%20like%20to%20get%20in%20touch." class="action-card" target="_blank">
+                <i class="fa-brands fa-whatsapp action-icon"></i>
+                <div class="action-text">
+                    <span class="action-label">WhatsApp</span>
+                    <span class="action-val">Chat Now</span>
+                </div>
+            </a>
+
+            <a href="tel:+201275377776" class="action-card">
+                <i class="fa-solid fa-phone action-icon"></i>
+                <div class="action-text">
+                    <span class="action-label">Call</span>
+                    <span class="action-val">Direct Line</span>
+                </div>
+            </a>
+
+            <a href="mailto:mina.gamal@ahramplastic.com" class="action-card">
+                <i class="fa-solid fa-envelope action-icon"></i>
+                <div class="action-text">
+                    <span class="action-label">Email</span>
+                    <span class="action-val">Send Mail</span>
+                </div>
+            </a>
+
+            <a href="https://www.facebook.com/ahramplasticgroup" class="action-card" target="_blank">
+                <i class="fa-brands fa-facebook-f action-icon"></i>
+                <div class="action-text">
+                    <span class="action-label">Facebook</span>
+                    <span class="action-val">Visit Page</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="footer-note">
+            Al-Ahram Group — Industrial Packaging Solutions
+        </div>
+    </div>
+
+    <script>
+        function downloadVCard() {
+            const vcardData = `BEGIN:VCARD
+VERSION:3.0
+N:Gamal;Mina;;;
+FN:Mina Gamal
+TITLE:Investor Relations Manager
+ORG:Al-Ahram Group
+TEL;TYPE=CELL:+201275377776
+EMAIL:mina.gamal@ahramplastic.com
+URL:https://ahramplastic.com/
+URL;TYPE=Location:https://maps.app.goo.gl/pbsaNYLEP9VZ75um6?g_st=aw
+END:VCARD`;
+
+            const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'Mina_Gamal_Contact.vcf');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
